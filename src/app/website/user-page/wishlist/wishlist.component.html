@@ -1,0 +1,30 @@
+<div class="wishes" *ngIf="userService.userInfo.wishlist.length !== 0"> 
+    <div class="wishlist-header">
+        <h2>Wishlist</h2>
+    </div>
+    <div class="wishlist-wish" *ngFor="let wish of userService.userInfo.wishlist" #div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" 
+            height="22" viewBox="0 0 22 22" style="cursor: pointer;" 
+            fill="none" (click)="removeFromWishlist(wish, div)">
+            <path d="M18 4L4 18M18 18L4 4.00001" stroke="#3C4242" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <img [src]="wish.img" class="wish-img">
+        <div class="wish-text">
+            <h5>{{wish.title}}</h5>
+            <h5>Color: <span>{{wish.color}}</span></h5>
+            <h5>Quantity <span>{{wish.cuantity}}</span></h5>
+        </div>
+        <div class="price-button">
+            <div class="wish-price">
+                <h5>{{wish.price | currency}}</h5>
+            </div>
+            <button class="add-to-cart" (click)="addToShoppingCart(wish, div)">Add to cart</button>
+        </div>
+    </div>
+</div>
+<div class="empty-wishlist" *ngIf="userService.userInfo.wishlist.length === 0">
+    <img src="assets/img/empty-wishlist.svg">
+    <h2>Your wishlist is empty.</h2>
+    <h6>You don’t have any products in the wishlist yet. You will find a lot of interesting products on our Shop page.</h6>
+    <button class="continue-shopping">Continue Shopping</button>
+</div>

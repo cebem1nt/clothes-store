@@ -1,0 +1,297 @@
+.container-area
+    padding: 5%
+    padding-top: 11vh
+    padding-bottom: 0
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: 1fr
+    gap: 3vh
+
+.main-acord
+    grid-area: 1 / 1 / 2 / 1
+
+.main-area 
+    padding: 4%
+    grid-area: 1 / 2 / 2 / 10
+
+#hidenmenu
+    padding-top: 7vh
+    padding-bottom: 2vh
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border: none
+    border-bottom: 1px solid #BEBCBD
+    h4
+        margin-bottom: 0
+        font-size: 100%
+
+.main-grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: auto
+    gap: 3vh
+    
+
+.area-header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1vh
+
+.header-header
+    width: 100%
+    h2
+        white-space: nowrap
+        font-size: 100%
+        text-align: left
+
+.header-nav
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    gap: 6%
+    h2
+        font-size: 100%
+
+.uniq-product-img
+    img
+        height: 65vh
+
+.main-acord
+    width: 100%
+    border: 0.25px groove #BEBCBD
+    border-top: none
+    height: fit-content
+
+.acrd-sub, .acrd-header
+    padding: 2vw
+
+.acrd-sub
+    border-bottom: 1px groove #BEBCBD
+    li
+        display: flex
+        justify-content: space-between
+        margin-bottom: 1.9vw
+        font-size: 90%
+        font-weight: 300
+
+.acrd-header
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px groove #BEBCBD
+    h4
+        font-size: 100%
+        margin-bottom: 0
+        font-weight: 400
+
+.accordion-button:focus
+    border:  1px solid #8A33FD
+    box-shadow: none
+
+.accordion-button:not(.collapsed)
+    background-color: #fff
+
+.acrd-price-start, .acrd-price-end
+    padding: 0
+    width: 60%
+    height: 80%
+    font-size: 100%
+    border: none
+    text-align: center
+    -webkit-appearance: none
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+    &:active, &:hover, &:focus
+        outline: 0
+        outline-offset: 0
+    
+.price-holder
+    display: flex
+    justify-content: center
+    gap: 2vh
+
+.price-input-holder
+    font-size: 100%
+    display: flex
+    justify-content: center
+    align-items: center 
+    border: 1px solid #BEBCBD
+    border-radius: 1rem
+    padding-left: 3%
+    width: 40%
+
+.color-grid
+    display: grid
+    grid-template-rows: auto
+    grid-template-columns: repeat(4,1fr)
+    gap: 3vh
+    padding-right: 2vw
+    padding-left: 2vw
+
+.color-color
+    border: 0.967px solid #F4F1F1
+    border-radius: 0.75rem
+    margin-bottom: 1vw
+    width: 3vw
+    height: 3vw
+
+.color-name
+    text-align: center
+    width: 100%
+    font-size: 100%
+
+.color-item
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.sizes-grid
+    display: grid
+    grid-template-rows: repeat(3,1fr)
+    grid-template-columns: repeat(3,1fr)
+    gap: 3vh
+    padding-right: 2vw
+    padding-left: 2vw
+
+.size-btn
+    font-size: 100%
+    padding: 0.4vw
+    background-color: #fff
+    border: 1px groove #BEBCBD
+    border-radius: 0.75rem
+ 
+.sub-two
+    padding: 0
+    border: 0
+
+.list-h2
+    font-size: 120%
+    margin-bottom: 4%
+    margin-top: 1%
+
+.clothing-sub
+    h3
+        color: #727272
+        font-size: 100%
+        font-weight: 700 
+
+.clothing-par
+    p
+        color: #807D7E
+        font-size: 100%
+        font-weight: 400
+
+#activemenu
+    position: static
+    z-index: 6
+    background-color: #fff
+    
+.bg
+    position: fixed
+    z-index: 5
+    top: 0
+    left: -0%
+    width: 100%
+    height: 100vh
+    background-color: #58585877
+
+@media only screen and (max-width: 1190px)
+    .color-grid
+        grid-template-columns: repeat(3, 1fr)
+
+@media only screen and (max-width: 970px)
+    .color-grid
+        grid-template-columns: repeat(2, 1fr)
+
+@media only screen and (max-width: 840px)
+    .main-grid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 3vh   
+
+@media only screen and (max-width: 790px)
+    #dml
+        display: none
+    
+    #hidenmenu
+        justify-content: center
+    .sizes-grid
+        grid-template-rows: repeat(4, 1fr)
+        grid-template-columns: repeat(2, 1fr)
+
+@media only screen and (max-width: 640px)
+    .color-color
+        width: 4vh
+        height: 4vh
+
+    .color-grid,.sizes-grid
+        padding: 0
+
+    .price-holder
+        justify-content: space-between
+        gap: 1vh
+
+    #activemenu
+        position: absolute
+        width: 40%
+
+
+@media only screen and (max-width: 600px)
+
+    .price-input-holder
+        width: 100%
+
+    .main-grid, .container-area
+        gap: 2.5vh
+
+    .color-grid, .sizes-grid
+        gap: 1vh
+
+    .header-header, .header-nav
+        h2
+            font-size: 80%
+    
+@media only screen and (max-width: 570px)
+    .main-area
+        padding: 0
+        padding-top: 4% 
+
+@media only screen and (max-width: 400px)
+    .main-grid
+        grid-template-columns: 1fr
+        grid-template-rows: auto
+
+    #hidenmenu
+        gap: 3vh
+
+    #activemenu
+        width: 70%
+
+    #dml
+        display: block    
+
+    .header-header
+        display: none
+
+    .header-nav
+        justify-content: space-between
+        h2
+            font-size: 1rem !important
+
+    .price-holder
+        flex-direction: column
+
+    .color-name
+        display: none
+
+    .header-header, .header-nav
+        h2
+            font-size: 65%
+
+@media only screen and (max-width: 320px)
+    #dml
+        display: none
+

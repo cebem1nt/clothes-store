@@ -1,0 +1,201 @@
+<div class="my-info-header">
+    <h2>
+        My Info
+    </h2>
+</div>
+<div class="my-info-subheader">
+    <h3>
+        Add Address
+    </h3>
+</div>
+<div class="add-address-forms">
+    <form [formGroup]="addressForm" (submit)="saveAddress()">
+        <div class="row-holder">
+            <div class="row-item">
+                <label for="firstname">First Name*</label>
+                <input type="text" 
+                name="firstname" 
+                id="firstname" 
+                formControlName="firstName"
+                placeholder="First Name">
+                <div class="validators" *ngIf="addressForm.get('firstName')?.invalid && addressForm.get('firstName')?.touched">
+                    <small *ngIf="addressForm.get('firstName')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('firstName')?.errors?.['minlength']">
+                        minimum {{addressForm.get('firstName')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>  
+            </div>
+            <div class="row-item">
+                <label for="lastname">Last Name*</label>
+                <input type="text" 
+                name="lastname" 
+                id="lastname"
+                formControlName="lastName"
+                placeholder="Last Name">
+                <div class="validators" *ngIf="addressForm.get('lastName')?.invalid && addressForm.get('lastName')?.touched">
+                    <small *ngIf="addressForm.get('lastName')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('lastName')?.errors?.['minlength']">
+                        minimum {{addressForm.get('lastName')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-holder">
+            <div class="row-item">
+                <label for="countryregion">Country / Region*</label>
+                <input type="text" 
+                name="countryregion"
+                id="countryregion"
+                formControlName="countryRegion"
+                placeholder="Country / Region">
+                <div class="validators" *ngIf="addressForm.get('countryRegion')?.invalid && addressForm.get('countryRegion')?.touched">
+                    <small *ngIf="addressForm.get('countryRegion')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('countryRegion')?.errors?.['minlength']">
+                        minimum {{addressForm.get('countryRegion')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+            <div class="row-item">
+                <label for="companyname">Company Name</label>
+                <input type="text" 
+                name="companyname" 
+                id="companyname"
+                formControlName="companyName"
+                placeholder="Company (optional)">
+                <div class="validators" *ngIf="addressForm.get('companyName')?.invalid && addressForm.get('companyName')?.touched">
+                    <small *ngIf="addressForm.get('companyName')?.errors?.['minlength']">
+                        minimum {{addressForm.get('companyName')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-holder">
+            <div class="row-item">
+                <label for="streetaddress">Street Address*</label>
+                <input type="text" 
+                name="streetaddress" 
+                id="streetaddress"
+                formControlName="streetAdress"
+                placeholder="House number and street name">
+                <div class="validators" *ngIf="addressForm.get('streetAdress')?.invalid && addressForm.get('streetAdress')?.touched">
+                    <small *ngIf="addressForm.get('streetAdress')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('streetAdress')?.errors?.['minlength']">
+                        minimum {{addressForm.get('streetAdress')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+            <div class="row-item">
+                <label for="aptsuite">Apt, suite, unit</label>
+                <input type="text" 
+                name="aptsuite" 
+                id="aptsuite" 
+                formControlName="aptSuite"
+                placeholder="apartment, suite, unit, etc. (optional)">
+                <div class="validators" *ngIf="addressForm.get('aptSuite')?.invalid && addressForm.get('aptSuite')?.touched">
+                    <small *ngIf="addressForm.get('aptSuite')?.errors?.['minlength']">
+                        minimum {{addressForm.get('aptSuite')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-holder">
+            <div class="row-item">
+                <label for="city">City*</label>
+                <input type="text" 
+                name="city" 
+                id="city"
+                formControlName="city"
+                placeholder="Town / City">
+                <div class="validators" *ngIf="addressForm.get('city')?.invalid && addressForm.get('city')?.touched">
+                    <small *ngIf="addressForm.get('city')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('city')?.errors?.['minlength']">
+                        minimum {{addressForm.get('city')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+            <div class="row-item">
+                <label for="state">State*</label>
+                <select name="state" 
+                id="state" 
+                formControlName="state">
+                    <option value="AL">Alabama</option>
+                    <option value="OR">Oregon</option>
+                    <option value="TX">Texas</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="VA">Virginia</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row-holder">
+            <div class="row-item">
+                <label for="phone">Phone*</label>
+                <input type="text" 
+                name="phone" 
+                id="phone"
+                formControlName="phone"
+                placeholder="Phone">
+                <div class="validators" *ngIf="addressForm.get('phone')?.invalid && addressForm.get('phone')?.touched">
+                    <small *ngIf="addressForm.get('phone')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('phone')?.errors?.['minlength']">
+                        minimum {{addressForm.get('phone')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+            <div class="row-item">
+                <label for="postalcode">Postal Code*</label>
+                <input type="text" 
+                name="postalcode" 
+                id="postalcode"
+                formControlName="postalCode"
+                placeholder="Postal Code">
+                <div class="validators" *ngIf="addressForm.get('postalCode')?.invalid && addressForm.get('postalCode')?.touched">
+                    <small *ngIf="addressForm.get('postalCode')?.errors?.['required']">field required</small>
+                    <small *ngIf="addressForm.get('postalCode')?.errors?.['minlength']">
+                        minimum {{addressForm.get('postalCode')?.errors?.['minlength'].requiredLength}} symbols
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="delivery-Instruction">
+            <label for="deliveryinstruction">Delivery Instruction</label>
+            <textarea 
+            formControlName="deliveryInstruction"
+            name="deliveryinstruction" 
+            id="deliveryinstruction" 
+            cols="30" 
+            rows="10" 
+            placeholder="Delivery Instruction"></textarea>
+        </div>
+
+        <div class="checkboxes">
+            <div class="check-boxes-item">
+                <input 
+                type="checkbox" 
+                name="defaultshipping" 
+                id="defaultshipping"
+                class="square-checkbox"
+                formControlName="defaultShipping">
+                <label for="defaultshipping">Set as default shipping address</label>
+            </div>
+            <div class="check-boxes-item">
+                <input type="checkbox" 
+                class="square-checkbox"
+                name="defaultbilling" 
+                id="defaultbilling"
+                formControlName="defaultBilling">
+                <label for="defaultbilling">Set as default billing address</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <a routerLink="/account/info"><button type="reset">Cancel</button></a>
+        </div>
+    </form>
+</div>

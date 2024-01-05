@@ -1,0 +1,47 @@
+.footer
+    display: flex
+    justify-content: center
+    padding: 5% 10%
+    background: #3C4242
+.footer-inside
+    width: 100%
+    h6  
+        font-weight: 400
+        font-size: 70%
+        color: white
+        margin-bottom: 0.7vw
+        margin-top: 0.7vw
+    display: flex
+    flex-direction: column
+.inside-header
+    h4
+        font-weight: 700
+        color: white
+        white-space: nowrap
+        font-size: 120%
+
+@media only screen and (max-width: 850px)
+    .inside-header
+        h4
+            font-size: 2.3vw
+
+    .footer-inside
+        h6  
+            font-size: 1.5vw
+
+@media only screen and (max-width: 550px)
+    .inside-header
+        h4
+            font-size: 90%
+        
+    #first, #second
+        display: none
+
+    .inside-header
+        h4
+            font-size: 95%
+
+    .footer-inside
+        align-items: center
+        h6  
+            font-size: 65%

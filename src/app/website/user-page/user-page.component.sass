@@ -1,0 +1,120 @@
+.user-container
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    grid-template-rows: 1fr
+    grid-column-gap: 9vh
+
+.page-nav
+    grid-area: 1 / 1 / 2 / 3
+
+.page-main
+    grid-area: 1 / 3 / 2 / 8
+
+.navigation-info
+    display: flex
+    align-items: center
+    gap: 2vh
+    margin-bottom: 3vh
+    h5
+        text-transform: capitalize
+
+.grey
+    color: #807D7E
+    font-weight: 400
+
+.selected-nav
+    background-color: #F6F6F6
+    padding-left: 3.5vh !important
+    border-radius: 0.5rem
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    border-left: 3px solid #3C4242
+
+.user-subheader
+    margin-bottom: 9vh
+
+.select-option
+    user-select: none
+    padding: 2vh 4vh
+    margin-bottom: 2vh
+    a
+        display: flex
+        align-items: center
+        gap: 4vh
+    
+    h4
+        color: #807D7E
+        font-weight: 500
+        font-size: 100%
+        margin-bottom: 0
+
+.adaptive-header
+    display: none
+
+.viewed-products
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-row: auto
+    gap: 5vh
+
+.recently-viewed
+    margin-top: 20vh
+
+@media only screen and (max-width: 785px)
+    .select-option
+        padding: 1vh
+        margin-bottom: 5vh
+
+    .viewed-products
+        grid-template-columns: repeat(2, 1fr)
+
+@media only screen and (max-width: 680px)
+    .hidelater
+        display: none
+
+    .adaptive-header
+        display: flex
+        flex-direction: column
+    
+    .select-option a
+        gap: 0
+        justify-content: space-between
+ 
+    .user-container
+        column-gap: 5vh
+
+@media only screen and (max-width: 590px)
+    .select-option svg 
+        display: none
+
+    .user-subheader
+        margin-bottom: 5vh
+
+@media only screen and (max-width: 420px)
+    .soon
+        display: none
+
+@media only screen and (max-width: 400px)
+    .viewed-products
+        grid-template-columns: 1fr
+
+    .select-option svg 
+        display: block
+    
+    .select-option a h4 
+        display: none
+
+
+@media only screen and (max-width: 340px)
+    .user-container
+        column-gap: 4vh
+
+    .page-nav
+        grid-area: 1 / 1 / 2 / 2
+
+    
+    .page-main
+        grid-area: 1 / 2 / 2 / 8
+
+    .navigation-info
+        gap: 1vh

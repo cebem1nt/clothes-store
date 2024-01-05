@@ -1,0 +1,168 @@
+.details-header
+    display: flex
+    gap: 1vh
+    align-items: center
+    margin-bottom: 8vh
+    margin-top: 6%
+    h2
+        margin-bottom: 0
+        color: #3C4242
+        font-weight: 600
+
+.details-title
+    background-color: #F6F6F6
+    border-radius: 0.5rem
+    padding: 4vh 6vh
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 7vh
+    h5
+        font-size: 100%
+        color: #807D7E
+        font-weight: 600
+        span
+            color: #3C4242
+            font-weight: 600
+    .block
+        h5>strong
+            color: #3C4242
+            margin-bottom: 1vh
+        h5>span
+            color: #807D7E
+            font-weight: 500
+
+.details-vis
+    width: 80%
+    margin: 0 auto
+
+.visual
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    margin-bottom: 6vh
+    svg
+        width: 100%
+    .vis-comments
+        display: flex
+        gap: 20vh
+        h6
+            color: #000
+            font-weight: 600
+            white-space: nowrap
+            font-size: small
+            text-align: center
+
+.details-comments
+    background-color: #F6F6F6
+    gap: 3vh
+    border-radius: 0.5rem
+    border: 0.5px solid rgba(128, 125, 126, 0.20)
+    padding: 4vh
+    display: flex
+    margin-bottom: 10vh
+    .comments-time
+        h5
+            font-size: 100%
+            color: #807D7E
+            font-weight: 600
+    .coment-note
+        h5
+            font-size: 100%
+            color: #3C4242
+            font-weight: 600
+
+.details-orders
+    background-color: #F6F6F6
+    border-radius: 0.5rem
+    padding: 0 6vh 6vh 6vh
+    .details-order
+        display: flex
+        padding: 4vh 0 
+        .order-img
+            margin: 0 2.5vh
+            img
+                width: 20vh
+                height: 25vh
+        .order-text
+            margin-right: auto
+            h5
+                color: #3C4242
+                font-weight: 700
+                margin-bottom: 3vh
+            span
+                color: #807D7E
+                font-weight: 500
+
+.order-other
+    display: flex
+    gap: 15vh
+    .order-qty
+            h5
+                color: #3C4242
+                font-weight: 700
+                white-space: nowrap
+                span
+                    color: #807D7E
+    .order-price
+        h5
+            color: #807D7E
+            font-weight: 700
+
+.light
+    color: #BEBCBD !important
+    font-weight: 600 !important
+
+@media only screen and (max-width: 1030px)
+    .vis-comments
+        gap: 18vh !important
+
+@media only screen and (max-width: 930px)
+    .vis-comments
+        gap: 15vh !important
+
+    .order-other
+        gap: 7vh
+
+@media only screen and (max-width: 830px)
+    .vis-comments
+        gap: 12vh !important
+
+    .details-order
+        flex-direction: column
+        .order-img 
+            margin: 0 !important
+            margin-bottom: 2vh !important
+        .order-text
+            h5
+                margin-bottom: 2vh
+
+@media only screen and (max-width: 730px)
+    .vis-comments
+        gap: 9vh !important
+        h6
+            font-size: x-small !important
+
+@media only screen and (max-width: 675px)
+    .details-header
+        margin-top: 6%  
+
+@media only screen and (max-width: 610px)
+    .visual
+        display: none
+
+    .details-vis
+        width: 100%
+
+@media only screen and (max-width: 530px)
+    .details-title, .details-comments
+        flex-direction: column
+        align-items: baseline
+        padding: 4vh
+        margin-bottom: 4vh
+
+@media only screen and (max-width: 440px)
+    .order-other
+        flex-direction: column
+        gap: 3vh

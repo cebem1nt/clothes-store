@@ -1,0 +1,369 @@
+input[type="text"], input[type="password"], input[type="number"]
+    border: none
+    outline: none
+    background-color: #F6F6F6
+    color: #807D7E
+    padding: 2vh 2.25vh
+    border-radius: 0.5rem
+    width: 100%
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+    -webkit-appearance: none
+
+button:disabled
+    background-color: #807D7E
+    cursor: not-allowed
+
+label
+    margin-bottom: 1.5vh
+    color: #3C4242
+    font-weight: 600
+    cursor: pointer
+
+img,svg
+    user-select: none
+
+hr
+    margin: 2rem 0
+    border-top: 2px solid #EDEEF2
+
+input
+    &.ng-touched.ng-invalid
+        border: 1px solid #be1a1a    
+
+    &.ng-valid.ng-touched
+        border: 1px solid #9c9c9c  
+
+.custom_animate__fadeOut
+    animation-name: fadeOut
+
+@keyframes fadeOut
+    0%
+        opacity: 1
+    100%
+        opacity: 0.5
+        display: none
+
+.display_none
+    display: none
+
+.validators
+    small
+        color: #be1a1a
+
+.checkout-header
+    margin-bottom: 8vh
+
+.checkout-container
+    padding-top: 14vh
+
+.checkout-nav
+    display: flex
+    align-items: center
+    gap: 2vh
+
+.checkout-nav-item
+    color: #807D7E
+
+#uniq-h2
+    margin-bottom: 3vh
+
+#uniq-h2a
+    margin-top: 0
+    margin-bottom: 0
+    font-size: 138%
+    &::before
+        display: none
+
+.grey
+    color: #807D7E
+    font-weight: 700
+
+.darker
+    color: #3C4242
+
+.checkout-forms
+    padding: 5vh
+    padding-left: 0
+    display: flex
+    flex-direction: column
+
+.group-of-two, .group-of-three
+    display: flex
+    gap: 6.5vh
+    margin-bottom: 2vh
+
+.group-of-one
+    width: 48%
+
+.column-holder
+    width: 100%
+    display: flex
+    flex-direction: column
+
+.continue-to-delivery
+    margin: 5vh 0 2.5vh 0
+
+.continue-to-delivery-btn
+    color: white
+    background-color: #8A33FD
+    padding: 2vh 2.25vh
+    border-radius: 0.5rem
+
+.continue-to-delivery-add
+    margin-top: 2vh
+    display: flex
+    gap: 1.5vh
+
+.group-of-important
+    display: flex
+
+.checkout-order
+    display: flex
+    flex-direction: column
+    width: 34%
+    height: fit-content
+    padding: 6vh 4vh
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.05), -2px -2px 4px 0px rgba(0, 0, 0, 0.05)
+
+.checkout-order-header
+    padding: 0.5vh 0 
+    border-bottom: 1px solid #EDEEF2
+    h4
+        font-weight: 600
+        color: #3C4242  
+
+.order-product
+    padding: 2vh 0
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #EDEEF2
+
+.order-product-img
+    margin-right: 2vh
+    img
+        height: 15.5vh
+        width: 12.5vh
+
+.order-product-info,.order-product-price
+    h4
+        color: #3C4242
+        font-weight: 700
+        font-size: 110%
+        margin-bottom: 2vh
+
+.order-product-info
+    margin-right: auto
+
+.total-two
+    padding: 2vh 0
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid #EDEEF2
+    h4
+        font-size: 110%
+        margin: 0
+
+.total-two-u
+    display: flex
+    justify-content: space-between
+    align-items: center
+    h4
+        font-size: 110%
+        margin: 0
+
+.total-four
+    padding: 2vh 0
+    border-bottom: 1px solid #EDEEF2
+
+.black
+    color: #3C4242
+    font-weight: 700
+
+.forms-add-header
+    margin-bottom: 2vh
+    h2
+        color: #3C4242
+        font-weight: 600
+
+
+.forms-add-subheader
+    margin-bottom: 6vh
+    h5
+        color: #3C4242
+        font-weight: 400
+
+.add-adress-form
+    padding: 4vh 6vh
+    margin-bottom: 6vh
+    background-color: #F6F6F6
+    border-radius: 0.75rem
+
+.add-adress-first, .add-adress-second
+    display: flex
+    align-items: center
+    padding: 3vh 0
+    
+    label
+        font-size: 125%
+        margin-bottom: 0
+
+.shipping-adress-first, .shipping-adress-second
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 3vh 0
+
+    h3
+        font-weight: 600
+        font-size: 125%
+        margin-bottom: 0
+
+    h4
+        font-size: 100%
+        font-weight: 500
+        margin-bottom: 0
+
+.add-adress-first, .shipping-adress-first
+    border-bottom: 1px solid #BEBCBD
+
+.add-adress-second, .add-adress-first, .card-header
+  input 
+    display: none 
+
+    &:checked + label::before 
+      content: ""
+      display: inline-block
+      width: 1.6vh
+      height: 1.6vh
+      outline-offset: 0.5vh
+      outline: 2px solid #3C4242
+      border-radius: 50%
+      margin-right: 3.5vh
+      background-color: #807D7E
+  
+  label 
+    position: relative
+    align-self: center
+
+    &::before 
+      content: ""
+      display: inline-block
+      width: 1.6vh
+      height: 1.6vh
+      outline-offset: 0.5vh
+      outline: 2px solid #3C4242
+      border-radius: 50%
+      margin-right: 3.5vh
+      background-color: #F6F6F6
+    
+.payment-method-form
+    background-color: #F6F6F6
+    border-radius: 0.75rem
+    padding: 6vh 8vh
+
+.card-header
+    display: flex
+    margin-bottom: 3vh
+    padding: 4vh 0
+
+.card-group
+    display: flex
+    flex-direction: column
+
+.payment-method-header
+    h3
+        font-size: 125%
+        font-weight: 600
+
+.payment-method-sub
+    h4
+        font-size: 110%
+        font-weight: 400
+
+.cards-variations
+    padding: 0 5vh
+    display: flex
+    gap: 5vh
+    margin-bottom: 5vh
+
+.card-inputs
+    padding: 0 5vh 5vh 5vh
+    border-bottom: 1px solid #BEBCBD
+
+.card-inputs-group
+    display: flex
+    gap: 3vh
+    input
+        border: 1px solid #3C4242
+        &.ng-touched.ng-invalid
+            border: 1px solid #be1a1a    
+
+.sp-container
+    width: 106%
+    display: flex
+    position: relative
+
+.security-code-img
+    cursor: pointer
+    position: absolute
+    top: 40%
+    left: 90%
+
+.pay-now-btn
+    margin-top: 5vh
+    background: #8A33FD
+    color: white
+    border-radius: 0.5rem
+    padding: 2vh 2.5vh
+
+@media only screen and (max-width: 930px)
+    .group-of-important
+        flex-direction: column
+
+    .pay-now-btn
+        margin-bottom: 5vh
+
+    .checkout-order
+        width: 100%
+    
+@media only screen and (max-width: 800px)
+    .security-code-img
+        left: 85%
+
+@media only screen and (max-width: 690px)
+    .payment-method-form
+        padding: 4vh
+
+    .checkout-forms
+        padding: 0
+
+@media only screen and (max-width: 550px)
+    .card-inputs-group
+        flex-direction: column
+
+    .sp-container
+        width: 100%
+
+@media only screen and (max-width: 500px)
+    .cards-variations
+        padding: 0
+
+    .add-adress-form
+        padding: 3vh 4vh
+
+    .group-of-three, .group-of-two
+        flex-direction: column
+
+    .group-of-one
+        width: 60%
+
+@media only screen and (max-width: 470px)
+    .card-inputs
+        padding-right: 0
+        padding-left: 0
+
+@media only screen and (max-width: 400px)
+    .cards-variations
+        display: none

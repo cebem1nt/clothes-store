@@ -1,0 +1,303 @@
+h5
+    font-size: 110%
+    
+p
+    margin-bottom: 0.8vh
+
+.cart-container
+    padding-top: 14vh
+    
+.cart-add-info
+    width: 60%
+    
+.lighter
+    color: #807D7E
+    font-weight: 500
+
+.darker
+    color: black
+    font-weight: 500
+    
+.purple
+    color: #8A33FD
+    font-weight: 600
+
+.add-info-nav
+    width: 35%
+    display: flex
+    justify-content: space-between
+    margin-bottom: 2vw
+    h5
+        white-space: nowrap
+
+.cart-nav
+    display: flex
+    background-color: #3C4242
+    padding: 3% 8%
+
+.cart-group-two
+    width: 100%
+
+.cart-group-one
+    width: 74%
+
+.cart-group-one, .cart-group-two
+    display: flex
+    align-items: center
+    justify-content: space-between
+    h4
+        text-transform: uppercase
+        font-size: 105%
+        color: #fff
+        font-weight: 500
+
+.cart-cart
+    padding: 3% 8%
+    padding-bottom: 5%
+
+.cart-product-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 4%
+    padding-bottom: 5%
+    border-bottom: 1px solid #BEBCBD
+
+.cart-product-details
+    display: flex
+    .cart-product-text
+        h5,h6
+            margin-bottom: 1.2vw
+
+.cart-product-img
+        margin-right: 2vh 
+        img 
+            border-radius: 10%
+            width: 18vh
+            height: 24vh
+
+.cart-product-price, .cart-product-subtotal
+    h5
+        font-weight: 700
+
+.cart-product-quantity
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 0.9rem
+    background-color: #F6F6F6
+    border-radius: 0.75rem
+    padding: 1.5vh 2.5vh
+
+.cart-product-shipping
+    h5
+        color: #BEBCBD
+        font-weight: 700
+
+.discount-sub-header
+    margin-bottom: 3vw
+
+.cart-total
+    display: flex
+    justify-content: space-between
+    padding: 3% 8%
+    background-color: #F6F6F6
+
+.discount-input-holder
+    margin-bottom: 3vw
+    display: flex
+    input
+        border-top-left-radius: 0.75rem
+        border-bottom-left-radius: 0.75rem
+        border: 1px solid #BEBCBD
+        border-right: none
+        padding: 1.5vh
+        background: #FFF
+        outline: none
+    button
+        border-top-right-radius: 0.75rem
+        border-bottom-right-radius: 0.75rem
+        background-color: #8A33FD
+        border: 1px solid #BEBCBD
+        padding: 1.5vh
+        color: #fff
+
+.continue-shopping
+    background-color: #fff
+    color: black
+    border: 1px solid #BEBCBD
+    border-radius: 0.75rem
+    padding: 1.8vh 5.5vh
+
+.cart-check
+    width: 35%
+    background-color: #F3F3F3
+    padding-right: 5%
+    padding-left: 5%
+
+.field-holder
+    padding-top: 3vh
+    display: flex
+    justify-content: space-around
+    h4
+        width: 20vh
+
+.proceed-holder
+    margin: 3vw 0
+    display: flex
+    justify-content: center
+
+.proceed-to-checkout
+    font-size: 100%
+    background-color: #8A33FD
+    color: #fff
+    padding: 1.8vh 5.5vh
+    border-radius: 0.75rem
+
+.hiden-ident, .cart-product-action-sup
+    display: none
+
+.cart-product-important
+    display: flex
+
+@media only screen and (max-width: 1030px)  
+    .add-info-nav
+        width: 50%
+
+    .cart-product-img
+        img
+            width: 12vw 
+            height: 15vw
+
+
+@media only screen and (max-width: 850px)  
+    .cart-check
+       width: 45%
+
+    .cart-product-details
+        width: 40%
+
+@media only screen and (max-width: 770px)
+    .cart-group-one
+        width: 45%
+
+    h4
+        font-size: 90%
+
+    .cart-group-one, .cart-group-two
+        h4
+            font-size: 90%
+
+    h5, p
+        font-size: 80%
+
+    h6
+        font-size: 79% 
+
+    .cart-product-details
+        width: 30%
+
+    .cart-check
+       width: 40%
+
+@media only screen and (max-width: 725px)
+    .cart-total
+        padding: 8%
+        flex-direction: column
+        justify-content: center
+
+    .discount-input-holder
+        input
+            width: 100%
+
+    .proceed-to-checkout
+        padding: 1.8vh 4vh
+
+    .cart-discount-codes
+        margin-bottom: 5vh
+        display: flex
+        flex-direction: column
+
+    #shippingone, #shippingtwo, #remove
+        display: none
+
+    .cart-check
+        width: 100%
+
+@media only screen and (max-width: 680px)
+    .hiden-lighter
+        color: #BEBCBD
+
+    .cart-group-one, .cart-group-two
+        flex-direction: column
+
+    .cart-nav
+        display: none
+
+    .cart-product-details
+        justify-content: space-between
+
+    #shippingone, #shippingtwo
+        display: flex
+
+    .cart-product-price, .cart-product-qc, .cart-product-shipping, .cart-product-subtotal
+        display: flex
+        align-items: center
+        gap: 3vh
+        justify-content: flex-start
+
+    .cart-product-item
+        padding: 0
+        padding: 5vh 8%
+
+    .cart-cart
+        padding: 0
+        background-color: #3C4242
+        width: 100%
+        h5
+            color: white
+            font-weight: 500
+
+    .hiden-ident, .cart-product-action-sup
+        display: block
+
+    .cart-product-action-sup
+        display: flex
+        align-items: flex-start
+
+    .cart-product-action
+        display: none
+
+    .cart-product-item
+        flex-direction: column
+        gap: 5vh
+        align-items: flex-start
+
+    .cart-product-details
+        width: 100%
+
+    h4
+        font-size: 125%
+
+    h5
+        font-size: 120%
+
+    h6
+        font-size: 115%
+
+    p
+        font-size: 110%
+
+    .add-info-sub
+        width: 180%
+
+@media only screen and (max-width: 505px)
+    .cart-product-important
+        flex-direction: column
+
+    .cart-product-img
+        margin-right: 0
+        margin-bottom: 2vh
+        img
+            width: 14vh
+            height: 18vh

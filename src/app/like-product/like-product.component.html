@@ -1,0 +1,37 @@
+<div class="changed-bg animate__animated" *ngIf="isVisible" #modal>
+    <div class="like-product animate__animated animate__fadeInDown">
+        <div class="img">
+            <img [src]="data.url">
+        </div>
+        <div class="colors">
+            <div class="color" *ngFor="let color of data.avaliableColors">
+                <div [ngStyle]="{backgroundColor: color.hex}" 
+                class="color-inside"  
+                [class]="selectedColor === color.title ? 'selected-color' : ''" 
+                (click)="selectedColor = color.title; isChanged = true"></div>
+                <h3>{{color.title}}</h3>
+            </div>
+        </div>
+        <div class="sizes">
+            <div class="size" [class]="selectedSize === size ? 'selected-size' : ''" 
+                *ngFor="let size of data.avaliableSizes" (click)="selectedSize = size; isChanged = true">
+                <h3>{{size}}</h3>
+            </div>
+        </div>
+        <div class="quantity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="2" (click)="decrease()"
+                viewBox="0 0 11 2" fill="none" style="cursor: pointer;">
+                <path d="M10.2412 1L1 1" stroke="#3C4242" stroke-width="1.03964" stroke-linecap="round"/>
+            </svg>
+            <h5 style="color: #3C4242; user-select: none;">{{selectedQuantity}}</h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" (click)="increase()"
+                viewBox="0 0 11 12" fill="none" style="cursor: pointer;">
+                <path d="M5.86181 1.37939V10.6206M10.4824 6L1.24121 6" stroke="#3C4242" stroke-width="1.03964" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="buttons">
+            <button class="like" (click)="addToLikedProducts(); destroy(); likeService.completeModal(modal)">like</button>
+            <button class="cancel" (click)="likeService.closeModal(modal); destroy()">cancel</button>
+        </div>
+    </div>
+</div>

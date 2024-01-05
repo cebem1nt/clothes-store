@@ -1,0 +1,118 @@
+.my-info-header, .my-info-subheader
+    h2, h3
+        color: #3C4242
+        font-weight: 600
+
+input
+    border: none
+    outline: none
+    padding: 0
+    font-family: "Poppins", sans-serif
+    color: #3C4242
+    background-color: #fff
+    font-weight: 600
+    font-size: 110%
+    width: 100%
+    border-bottom: 1px groove #807D7E
+    padding-bottom: 3px
+
+input[disabled]
+    border: none
+    padding: 0
+
+.grey
+    color: #807D7E
+    font-weight: 400
+
+.info-field
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: 1px solid #EDEEF2
+    
+.info-field
+    padding: 2vh 0 0 0
+
+.column
+    h5, input
+        margin-bottom: 2vh
+
+.change, .add-new
+    color: #3C4242
+    font-weight: 600
+    font-size: 100%
+    user-select: none
+    cursor: pointer
+
+.address-container
+    margin-top: 4vh
+    display: grid
+    grid-template-columns: repeat(2, 48%)
+    justify-content: space-between
+    grid-template-rows: 1fr
+
+.address
+    background-color: #F6F6F6
+    border-radius: 0.75rem
+    padding: 2vh 3vh
+    h5,strong,p, .address-header
+        margin-bottom: 3vh
+        color: #807D7E
+    strong
+        color: #3C4242
+    p, .address-phone h5
+        font-size: 100%
+
+.address-header
+    h5
+        color: #3C4242
+        font-weight: 600
+
+.my-info-header    
+    padding-top: 3vh
+
+.active-buttons
+    display: flex
+    gap: 5vh
+
+.comment-holder
+    margin-bottom: 2vh
+    display: flex
+    gap: 2vh
+    h5
+        color: #807D7E
+        background-color: #F6F6F6
+        font-size: 100%
+        margin-bottom: 0
+        text-align: center  
+        padding: 1vh 2vh
+        border-radius: 0.5rem
+        border: 1px solid #807D7E
+
+.address-field-header
+    margin-top: 4vh
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.control
+    user-select: none
+    cursor: pointer
+
+@media only screen and (max-width: 1000px)
+    .active-buttons
+        gap: 0
+        justify-content: space-between
+
+@media only screen and (max-width: 950px)
+    .address-container
+        grid-template-columns: 1fr
+        gap: 3vh
+
+    .my-info-header
+        padding-top: 0
+
+@media only screen and (max-width: 650px)
+    .comment-holder
+        flex-direction: column
+        gap: 2vh

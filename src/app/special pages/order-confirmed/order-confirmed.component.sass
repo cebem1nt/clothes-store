@@ -1,0 +1,57 @@
+.order-girl, .order-msg
+    img, svg
+        width: 100%
+   
+.order-container
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 12vh 5vh
+
+.inside-msg
+    position: absolute
+    width: 60%
+    display: flex
+    flex-direction: column
+    align-items: center
+    top: 20%
+    left: 24%
+    h2
+        text-align: center
+        margin: 5vh 0
+        font-size: 180%
+    button
+        background-color: #8A33FD
+        color: #fff
+        border-radius: 0.5rem
+        padding: 8% 10%
+
+.order-msg
+    position: relative
+    
+@media only screen and (max-width: 650px)
+    .inside-msg
+        top: 17%
+        h2
+            margin: 3vh 0
+
+@media only screen and (max-width: 600px)
+    .inside-msg
+        top: 18%
+        h2
+            font-size: 150%
+        button
+            font-size: 90%
+
+@media only screen and (max-width: 500px)
+    .inside-msg
+        top: 25%
+        h2
+            font-size: 100%
+            margin: 2vh 0
+        button
+            font-size: 70%
+
+@media only screen and (max-width: 360px)
+    .order-girl
+        display: none

@@ -1,0 +1,121 @@
+.my-orders-header
+    margin-bottom: 6vh
+    h2
+        color: #3C4242
+        font-weight: 700
+    
+.my-order-nav
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid #F6F6F6
+    margin-bottom: 6vh
+    a
+        font-size: 140%
+        font-weight: 600
+        color: #3C4242
+        text-align: center
+        padding: 1.5vh 10%
+
+.selected-order-nav
+    background-color: #F6F6F6
+    color: #3C4242
+    border-bottom: 3px solid #3C4242
+
+.order-sub-info
+    background-color: #F6F6F6
+    padding: 3vh 6vh
+    border-radius: 0.5rem
+    display: flex
+    flex-direction: column
+    h4
+        color: #3C4242
+        font-weight: 600
+    .big-block
+        display: flex
+        justify-content: space-between
+    
+.block
+    display: flex
+    flex-direction: column
+    h5
+        color: #807D7E
+        font-weight: 600
+        font-size: 100%
+        margin-bottom: 2vh
+    
+    span
+        color: #BEBCBD
+        font-weight: 400
+
+.order-info
+    padding-bottom: 5vh
+    border-bottom: 1px solid #EDEEF2
+
+.order-order
+    margin-top: 5vh
+    display: flex
+    .o-img
+        margin-right: 4vh
+        img
+            width: 16vh
+            height: 21vh
+    .o-text
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        strong
+            color: #3C4242
+            font-weight: 600
+            font-size: 110%
+        h6
+            color: #3C4242
+            font-weight: 600
+            font-size: 100%
+        span
+            color: #BEBCBD
+            font-weight: 600
+    .o-button
+        align-self: center
+        margin-left: auto
+        button
+            background-color: #8A33FD
+            color: #fff
+            padding: 2vh 4vh
+            border-radius: 0.5rem
+
+.more-products
+    box-shadow: 10px 10px 0px 4px #F6F6F6
+
+@media only screen and (max-width: 945px)
+    .big-block
+        display: flex
+        flex-direction: column
+        .block
+            align-items: flex-start !important
+
+@media only screen and (max-width: 670px)
+    .my-orders-header
+            margin-top: 0 !important
+
+@media only screen and (max-width: 630px)
+    .order-order
+        display: block
+        .o-img
+            width: fit-content
+            margin: 0
+            margin-bottom: 4vh
+        .o-text
+            h6
+                margin-bottom: 2vh
+
+@media only screen and (max-width: 490px)
+    .my-order-nav
+        flex-direction: column
+
+    .order-sub-info
+        padding: 2vh
+
+    .my-orders-header
+        h2
+            margin-bottom: 0
+            text-align: center

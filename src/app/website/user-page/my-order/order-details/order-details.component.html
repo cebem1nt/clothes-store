@@ -1,0 +1,89 @@
+<div class="details-header">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" 
+        xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;" (click)="goBack()">
+        <path d="M11.6668 5L7.25604 9.41074C6.9306 9.73618 6.9306 10.2638 7.25604 10.5893L11.6668 15" stroke="#3C4242" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <h2>Order Details</h2>
+</div>
+<div class="details-title">
+    <div class="block">
+        <h5><strong>Order no: #{{order.orderNumber}}</strong></h5>
+        <h5><span>Placed On {{order.orderDate | date}}</span></h5>
+    </div>
+    <h5>Total : <span>{{orderSubtotal(order.products) | currency}}</span></h5>
+</div>
+<div class="details-vis">
+    <div class="visual">
+        <svg width="579" height="22" viewBox="0 0 579 22" fill="none" xmlns="http://www.w3.org/2000/svg" 
+        *ngIf="order.orderStatus === 'Inprogress'">
+            <path d="M12 11L571 11" stroke="#BEBCBD" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="10" cy="11" r="10" fill="#3C4242"/>
+            <circle cx="213" cy="11" r="11" fill="#CFCFCF"/> 
+            <circle cx="213" cy="11" r="7" fill="#3C4242"/>
+            <circle cx="396" cy="11" r="8" fill="#BEBCBD"/>
+            <circle cx="571" cy="11" r="8" fill="#BEBCBD"/>
+        </svg>
+        <svg width="579" height="22" viewBox="0 0 579 22" fill="none" xmlns="http://www.w3.org/2000/svg" 
+        *ngIf="order.orderStatus === 'Order Placed'">
+            <path d="M12 11L571 11" stroke="#BEBCBD" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="10" cy="11" r="11" fill="#CFCFCF"/> 
+            <circle cx="10" cy="11" r="7" fill="#3C4242"/> 
+            <circle cx="213" cy="11" r="8" fill="#BEBCBD"/>
+            <circle cx="396" cy="11" r="8" fill="#BEBCBD"/>
+            <circle cx="571" cy="11" r="8" fill="#BEBCBD"/>
+        </svg>
+        <svg width="579" height="22" viewBox="0 0 579 22" fill="none" xmlns="http://www.w3.org/2000/svg" 
+        *ngIf="order.orderStatus === 'Shipped'">
+            <path d="M12 11L571 11" stroke="#BEBCBD" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="10" cy="11" r="10" fill="#3C4242"/> 
+            <circle cx="213" cy="11" r="10" fill="#3C4242"/>
+            <circle cx="396" cy="11" r="11" fill="#CFCFCF"/>
+            <circle cx="396" cy="11" r="7" fill="#3C4242"/> 
+            <circle cx="571" cy="11" r="8" fill="#BEBCBD"/>
+        </svg>
+        <svg width="579" height="22" viewBox="0 0 579 22" fill="none" xmlns="http://www.w3.org/2000/svg" 
+        *ngIf="order.orderStatus === 'Delivered'">
+            <path d="M12 11L571 11" stroke="#BEBCBD" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="10" cy="11" r="10" fill="#3C4242"/> 
+            <circle cx="213" cy="11" r="10" fill="#3C4242"/>
+            <circle cx="396" cy="11" r="10" fill="#3C4242"/>
+            <circle cx="571" cy="11" r="11" fill="#CFCFCF"/>
+            <circle cx="571" cy="11" r="8" fill="#3C4242"/> 
+        </svg>
+        <div class="vis-comments">
+            <h6>Order Placed</h6>
+            <h6>Inprogress</h6>
+            <h6 [class]="order.orderStatus === 'Order Placed' ? 'light': ''">Shipped</h6>
+            <h6 [class]="order.orderStatus === 'Order Placed' || 
+            order.orderStatus === 'Inprogress' ? 'light': ''">Delivered</h6>
+        </div>  
+    </div>    
+    <div class="details-comments">
+        <div class="comments-time">
+            <h5>8 June 2023 3:40 PM</h5>
+        </div>
+        <div class="coment-note">
+            <h5>Your order has been successfully verified.</h5>
+        </div>
+    </div>
+</div>
+<div class="details-orders">
+    <div class="details-order" *ngFor="let option of order.products"
+    [ngStyle]="{borderBottom: order.products.indexOf(option) !== order.products.length - 1 ? '1px solid #BEBCBD' : ''}">
+        <div class="order-img">
+            <img [src]="option.img">
+        </div>
+        <div class="order-text">
+            <h5>{{option.title}}</h5>
+            <h5>Color: <span>{{option.color}}</span></h5>
+        </div>
+        <div class="order-other">
+            <div class="order-qty">
+                <h5>Qty : <span>{{option.cuantity}}</span></h5>
+            </div>
+            <div class="order-price">
+                <h5>{{option.subtotal | currency}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

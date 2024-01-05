@@ -1,0 +1,77 @@
+.my-info-header, .my-info-subheader
+    h2,h3
+        color: #3C4242
+        font-weight: 600
+
+.row-holder
+    display: flex
+    gap: 5vh
+    margin-bottom: 5vh
+
+.row-item
+    display: flex
+    flex-direction: column
+    width: 100%
+    input, select
+        width: 100%
+        background-color: #F6F6F6
+        border-radius: 0.6rem
+        padding: 2vh 2.5vh
+        color: #807D7E
+        outline: none
+        border: none
+    
+    select
+        cursor: pointer
+        -moz-appearance: none
+        -webkit-appearance: none
+        background-image: url('/assets/img/gui-icons/chevron/down.svg')
+        background-repeat: no-repeat
+        background-position-x: 95%
+        background-position-y: 50%
+        
+label
+    color: #3C4242
+    font-weight: 600
+    margin-bottom: 1vh
+
+textarea
+    width: 100%
+    background-color: #F6F6F6
+    border-radius: 0.6rem
+    padding: 2vh 2.5vh
+    color: #807D7E
+    outline: none
+    border: none
+    resize: none
+
+.delivery-Instruction, .checkboxes
+    margin-bottom: 3vh
+
+
+.check-boxes-item
+    display: flex
+    gap: 2vh
+
+.buttons
+    display: flex
+    gap: 4vh
+    button[type="reset"]
+        color: #807D7E
+        background-color: #F6F6F6
+        padding: 2vh 3.5vh
+        border-radius: 0.5rem
+
+    button[type="submit"]
+        color: #fff
+        background-color: #8A33FD
+        padding: 2vh 3.5vh
+        border-radius: 0.5rem
+
+.validators small
+    color: #a01818
+    
+
+@media only screen and (max-width: 800px)
+    .row-holder
+        flex-direction: column

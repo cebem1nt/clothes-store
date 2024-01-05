@@ -1,0 +1,177 @@
+<app-nav></app-nav>
+<div class="show-container">
+    <div class="show-img">
+        <img [src]="product.url">
+    </div>
+    <div class="show-text">
+        <div class="show-url">
+            <div id="show-first" class="show-url-item">shop</div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.33325 5L12.744 9.41074C13.0694 9.73618 13.0694 10.2638 12.744 10.5893L8.33325 15" stroke="#807D7E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div id="show-second" class="show-url-item">{{spliedRoute[2]}}</div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.33325 5L12.744 9.41074C13.0694 9.73618 13.0694 10.2638 12.744 10.5893L8.33325 15" stroke="#807D7E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div id="show-third" class="show-url-item">{{product.type}}</div>
+        </div>
+        <div class="text-title"><h1>{{product.title}}</h1></div>
+        <div class="text-add">
+           <div class="add-stars-coments">
+                <div class="add-stars">
+                    <img src="assets/img/home/feedback/star_full.svg">
+                    <img src="assets/img/home/feedback/star_full.svg">
+                    <img src="assets/img/home/feedback/star_full.svg">
+                    <img src="assets/img/home/feedback/star_full.svg">
+                    <img src="assets/img/home/feedback/star_half.svg">
+                    <div class="stars-translation">3.5</div>
+                </div>
+                <div class="add-comments">
+                    <img src="assets/img/gui-icons/message.svg">
+                    <div class="comments-translation">120 comments</div>
+                </div>
+           </div>
+            <div class="select-size">
+                <div class="select-size-header">
+                    <h5>Select Size</h5>
+                    <a href="#" class="size-guide"><h5>Size Guide</h5></a>
+                    <img src="assets/img/gui-icons/arrow/right.svg">
+                </div>
+                <div class="size-sizes">
+                    <button 
+                    *ngFor="let size of product?.avaliableSizes"
+                    class="size-size" 
+                    (click)="selectedSize = size"
+                    [ngStyle]="{
+                        backgroundColor: selectedSize === size ? '#3C4242' : 'white',
+                        color: selectedSize === size ? 'white' : '#3C4242'
+                    }"
+                    >{{size}}</button>
+                </div>
+            </div>
+            <div class="colors-avaliable">
+                <h5 class="colors-avaliable-h5">Colours Available</h5>
+                <div class="colors-colors">
+                    <button *ngFor="let color of product?.avaliableColors"
+                    class="colors-color"  
+                    (click)="selectedColor = color.title"
+                    [ngStyle]="{
+                        outlineOffset: '1px',
+                        outline: selectedColor === color.title ? '1px solid #3C4242' : 'none',
+                        backgroundColor: color.hex
+                    }"></button>
+                </div>
+            </div>
+            <div class="add-to-cart">
+                <button class="add-to-cart-btn" (click)="addToProductCart()"><h5>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 3.33325H3.00526C3.85578 3.33325 4.56986 3.97367 4.6621 4.81917L5.3379 11.014C5.43014 11.8595 6.14422 12.4999 6.99474 12.4999H14.205C14.9669 12.4999 15.6317 11.9833 15.82 11.2451L16.9699 6.73584C17.2387 5.68204 16.4425 4.65733 15.355 4.65733H5.5M5.52063 15.5207H6.14563M5.52063 16.1457H6.14563M14.6873 15.5207H15.3123M14.6873 16.1457H15.3123M6.66667 15.8333C6.66667 16.2935 6.29357 16.6666 5.83333 16.6666C5.3731 16.6666 5 16.2935 5 15.8333C5 15.373 5.3731 14.9999 5.83333 14.9999C6.29357 14.9999 6.66667 15.373 6.66667 15.8333ZM15.8333 15.8333C15.8333 16.2935 15.4602 16.6666 15 16.6666C14.5398 16.6666 14.1667 16.2935 14.1667 15.8333C14.1667 15.373 14.5398 14.9999 15 14.9999C15.4602 14.9999 15.8333 15.373 15.8333 15.8333Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>Add to cart</h5></button>
+            <div class="cart-price"><h5>{{product.price | currency}}</h5></div>
+            </div>
+            <hr id="yesrmoveme">
+            <div class="add-info">
+                <a href="#"><div class="info-item">
+                    <img src="assets/img/gui-icons/Frame 24.svg"><h5>Secure payment</h5></div>
+                </a>
+                <a href="#"><div class="info-item">
+                    <img src="assets/img/gui-icons/Frame 26.svg"><h5>Free shipping</h5></div>
+                </a>
+                <a href="#"><div class="info-item">
+                    <img src="assets/img/gui-icons/Frame 25.svg"><h5>Size & Fit</h5></div>
+                </a>
+                <a href="#"><div class="info-item">
+                    <img src="assets/img/gui-icons/Frame 27.svg"><h5>Free Shipping & Returns</h5></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-site add-container" style="padding-bottom: 0;">
+    <div class="desc-area">
+        <div class="product-desc-header">
+            <h2 class="home-h2">Product Description</h2>
+        </div>
+        <div class="desc-nav">
+            <div class="desc-item">
+                <div (click)="selectedNav ='Description'"><h4
+                    [ngStyle]="{
+                        color: selectedNav === 'Description' ? '#3C4242' : '#807D7',
+                        fontWeight: selectedNav === 'Description' ? 700 : 400,
+                        borderBottom: selectedNav === 'Description' ? '1px solid black' : 'none'
+                    }">Description</h4></div>
+            </div>
+            <div class="desc-item">
+                <div (click)="selectedNav ='User comments'"><h4
+                    [ngStyle]="{
+                        color: selectedNav === 'User comments' ? '#3C4242' : '#807D7',
+                        fontWeight: selectedNav === 'User comments' ? 700 : 400,
+                        borderBottom: selectedNav === 'User comments' ? '1px solid black' : 'none'
+                    }">User comments</h4></div>
+            </div>
+            <div class="desc-item" id="questionanswer">
+                <div (click)="selectedNav ='Question & Answer'"><h4
+                    [ngStyle]="{
+                        color: selectedNav === 'Question & Answer' ? '#3C4242' : '#807D7',
+                        fontWeight: selectedNav === 'Question & Answer' ? 700 : 400,
+                        borderBottom: selectedNav === 'Question & Answer' ? '1px solid black' : 'none'
+                    }">Question & Answer</h4></div>
+            </div>
+        </div>
+        <div class="desc-desc">
+            <p>100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide  all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.</p>
+        </div>
+        <div class="desc-table">
+            <div class="table-item">
+                <h6 class="table-header">Fabric</h6>
+                <h6>Bio-washed Cotton</h6>
+            </div>
+            <div class="table-item">
+                <h6 class="table-header">Pattern</h6>
+                <h6>Printed</h6>
+            </div>
+            <div class="table-item">
+                <h6 class="table-header">Fit</h6>
+                <h6>Regular-fit</h6>
+            </div>
+            <div class="table-item">
+                <h6 class="table-header">Neck</h6>
+                <h6>Round Neck</h6>
+            </div>
+            <div class="table-item">
+                <h6 class="table-header">Sleeve</h6>
+                <h6>Half-sleeves</h6>
+            </div>
+            <div class="table-item">
+                <h6 class="table-header">Style</h6>
+                <h6>Casual Wear</h6>
+            </div>        
+        </div>
+    </div>
+</div>
+<div class="container-site" style="padding-top: 0;">
+    <section class="similar-products">
+        <div class="similar-header">
+            <h2 class="home-h2">Similar Products</h2>
+        </div>
+        <div class="similar-products-grid">
+            <div class="item-product" *ngFor="let product of similarProducts">
+                <a [href]="product.sex === 'f' ? '/products/women/product/' + product.id : '/products/men/product/' + product.id">
+                    <div class="product-img" (click)="likeServie.likeProduct($event, product)">
+                        <img [src]="product.url">
+                    </div>
+                </a>
+                <div class="product-container">
+                <div class="product-text">
+                    <h5>{{productService.textShortner(product.title)}}</h5>
+                    <p>{{product.brand}}</p>
+                </div>
+                <div class="product-add">
+                    <div class="price">{{product.price | currency}}</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

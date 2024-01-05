@@ -1,0 +1,102 @@
+.wishlist-header
+    padding-top: 3vh
+    h2
+        color: #3C4242
+        font-weight: 700
+
+.wishlist-wish
+    display: flex
+    align-items: center
+    margin-top: 5vh
+    padding-bottom: 5vh
+    border-bottom: 1px solid #EDEEF2
+
+.wish-img
+    height: 17vh
+    width: 14vh
+    margin: 0 4vh
+
+.wish-text
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin-right: auto
+    h5
+        color: #3C4242
+        font-weight: 700
+        margin-bottom: 1.5vh
+        span
+            color: #807D7E
+            font-weight: 500
+
+.wish-price
+    color: #807D7E
+    h5
+        font-weight: 700
+
+.add-to-cart
+    background-color: #8A33FD
+    border-radius: 0.5rem
+    color: #fff
+    padding: 2vh 2.5vh 
+    white-space: nowrap
+
+.empty-wishlist
+    display: flex
+    flex-direction: column
+    align-items: center
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.05), -2px -2px 4px 0px rgba(0, 0, 0, 0.05)
+    border-radius: 0.25rem
+    padding: 10vh 0vh
+    img
+        height: 25vh
+        width: 25vh
+        margin: 3.5vh 0
+    h2
+        margin-botton: 4vh
+        color: #3C4242
+        font-weight: 600
+    h6
+        color: #807D7E
+        font-weight: 500
+        text-align: center
+        margin-bottom: 3vh
+        width: 60%
+    button
+        border-radius: 0.5rem
+        background: #8A33FD
+        color: #fff
+        padding: 1.5vh 3vh
+
+.price-button
+    display: flex
+    align-items: center
+    gap: 8vh
+
+@media only screen and (max-width: 1000px)
+    .wish-text
+        h5
+            white-space: normal
+        
+@media only screen and (max-width: 800px)
+    .wishlist-wish
+        flex-direction: column
+
+    .wish-img
+        width: auto
+        height: 50vh
+        margin: 4vh 0
+
+    .wish-text  
+        margin-right: 0
+
+    .price-button
+        width: 50vh
+        gap: 16vh
+
+@media only screen and (max-width: 460px)
+    .price-button
+        flex-direction: column
+        gap: 2vh
+        align-items: flex-start
+        width: 100%

@@ -1,0 +1,40 @@
+<div class="my-orders-header" style="margin-top: 6%;">
+    <h2>My Orders</h2>
+</div>
+<div class="my-order-nav">
+    <a href="#" [class]="currentRoute.includes('/active') ? 'selected-order-nav' : '' ">Active</a>
+    <a href="#" [class]="currentRoute.includes('/completed') ? 'selected-order-nav' : '' ">Completed</a>
+</div>
+<div class="order">
+    <div class="order-info" *ngFor="let order of userService.orders.active">
+        <div class="order-sub-info">
+            <h4><strong>Order no: <span>#{{order.orderNumber}}</span></strong></h4>
+            <div class="big-block">
+                <div class="block" style="align-items: flex-start;">
+                    <h5>Order Date: <span>{{order.orderDate | date}}</span></h5>
+                    <h5>Estimated Delivery Date: <span>{{order.estimatedTime | date}}</span></h5>
+                </div>
+                <div class="block" style="align-items: flex-end;">
+                    <h5>Order Status : <span>{{order.orderStatus}}</span></h5>
+                    <h5>Payment Method : <span>{{order.paymentMethod}}</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="order-order">
+            <div class="o-img" [class]="order.products.length > 1 ? 'more-products': ''">
+                <img [src]="order.products[0].img">
+            </div>
+            <div class="o-text">
+                <strong>{{order.products[0].title}}</strong>
+                <h6>Colour : <span>{{order.products[0].color}}</span></h6>
+                <h6>Qty : <span>{{subtotalItems(order.products)}}</span></h6>
+                <h6>Total : <span>{{orderSubtotal(order.products) | currency}}</span></h6>
+            </div>
+            <div class="o-button">
+                <a routerLink="/account/order-details">
+                    <button class="view-detail" (click)="viewDetails(order)">View Detail</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

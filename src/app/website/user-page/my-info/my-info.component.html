@@ -1,0 +1,94 @@
+<div class="my-info-header">
+    <h2>
+        My Info
+    </h2>
+</div>
+<div class="my-info-subheader">
+    <h3>
+        Contact Details
+    </h3>
+</div>
+<div class="info-field">
+    <div class="column">
+        <h5 class="grey">Your Name</h5>
+        <input type="text" 
+        [value]="userService.userInfo.userName" 
+        [disabled]="inputFlags['isName']"
+        [(ngModel)] ="userService.userInfo.userName">
+    </div>
+    <h5 class="change" (click)="changeValue($event,'isName')">Change</h5>
+</div>
+<div class="info-field">
+    <div class="column">
+        <h5 class="grey">Email Address</h5>
+        <input type="text" 
+        [value]="userService.userInfo.emailAdres" 
+        [disabled]="inputFlags['isEmail']"
+        [(ngModel)] ="userService.userInfo.emailAdres">
+    </div>
+    <h5 class="change" (click)="changeValue($event,'isEmail')">Change</h5>
+</div>
+<div class="info-field">
+    <div class="column">
+        <h5 class="grey">Phone Number</h5>
+        <input type="text" 
+        [value]="userService.userInfo.phoneNumber" 
+        [disabled]="inputFlags['isPhone']"
+        [(ngModel)] ="userService.userInfo.phoneNumber">
+    </div>
+    <h5 class="change" (click)="changeValue($event,'isPhone')">Change</h5>
+</div>
+<div class="info-field">
+    <div class="column">
+        <h5 class="grey">Password</h5>
+        <input type="password" 
+        [value]="userService.userInfo.password" 
+        disabled 
+        [disabled]="inputFlags['isPassword']"
+        [(ngModel)] ="userService.userInfo.password"
+        name="address">
+    </div>
+    <h5 class="change" (click)="changeValue($event,'isPassword')">Change</h5>
+</div>
+
+<div class="address-field-header">
+    <h3 style="color: #3C4242; font-weight: 600;">Address</h3>
+    <a routerLink="address">
+        <h5 class="add-new"  
+        style="user-select: none; cursor: pointer;">Add New</h5>
+    </a>
+</div>
+
+<div class="address-container">
+    <div class="address" *ngFor="let address of userAddresses">
+        <div class="address-header">
+            <h5>{{address.addressName}}</h5>
+        </div>
+        <div class="address-phone">
+            <h5>{{address.addressPhoneNumber}}</h5>
+        </div>
+        <div class="address-comment">
+           <p>{{address.address}}</p>
+        </div>
+        <div class="comment-holder">
+            <h5 style="margin-bottom: 0;">{{address.buildingInfo}}</h5>
+            <h5 *ngIf="!(address.isDefaultBilling && address.isDefaultShipping) && address.isDefaultShipping">
+                Default shipping address
+            </h5>
+            <h5 *ngIf="!(address.isDefaultBilling && address.isDefaultShipping) && address.isDefaultBilling">
+                Default billing address
+            </h5>
+            <h5 *ngIf="address.isDefaultBilling && address.isDefaultShipping">
+                Default address
+            </h5>
+        </div>
+        <div class="active-buttons">
+            <strong class="control" 
+            (click)="removeAddress(address.id)">Remove</strong>
+            <strong class="control" (click)="editAddress(address.id)">Edit</strong>
+            <strong class="control" 
+            *ngIf="!address.isDefaultBilling || !address.isDefaultShipping" 
+            (click)="defaultAddress(address.id)">Set as default</strong>
+        </div>
+    </div>
+</div>

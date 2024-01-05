@@ -1,0 +1,255 @@
+<app-nav></app-nav>
+<div class="shop-slide animate__animated animate__fadeInDown">
+    <div id="slider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/home/slide-1.png" class="w-100 h-100" alt="...">
+            <div class="carousel-caption slider-caption">
+              <h5>T-shirt / Tops</h5>
+              <h1 class="sum-h1">Summer Value Pack</h1>
+              <h4 class="categ-h4">cool / colorful / comfy</h4>
+              <button class="slider-btn">Shop Now</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/home/slide-1.png" class="w-100 h-100" alt="...">
+            <div class="carousel-caption slider-caption">
+                <h5>T-shirt / Tops</h5>
+                <h1 class="sum-h1">Summer Value Pack</h1>
+                <h4 class="categ-h4">cool / colorful / comfy</h4>
+                <button class="slider-btn">Shop Now</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="container-site">
+  <section class="new-arrival">
+    <div class="arrival-header animate__animated animate__fadeIn">
+      <h2 class="home-h2">New Arrival</h2>
+    </div>
+    <div class="arrival-content">
+        <div class="content-item animate__animated animate__fadeInDown">
+          <a href="products/men"><img src="assets/img/home/new-arrival/a2.png"><p>Knitted Joggers</p></a>
+        </div>
+        <div class="content-item animate__animated animate__fadeInDown">
+          <a href="products/men"><img src="assets/img/home/new-arrival/a1.png"><p>Full Sleeve</p></a>
+        </div>
+        <div class="content-item animate__animated animate__fadeInDown">
+          <a href="products/women"><img src="assets/img/home/new-arrival/a3.png"><p>Active T-Shirts</p></a>
+        </div>
+        <div class="content-item animate__animated animate__fadeInDown">
+          <a href="products/men"><img src="assets/img/home/new-arrival/a4.png"><p>Urban Shirts</p></a>
+        </div>
+    </div>
+  </section>
+  <section class="big-saving-zone">
+    <div class="saving-zone-header animate__animated animate__fadeIn"><h2 class="home-h2">Big Saving Zone</h2></div>
+    <div class="saving-zone-grid">
+    <a href="products/men">
+      <div class="saving-item" id="zone-1">
+        <div class="saving-item-text">
+          <h1>Hawaiian <br> Shirts</h1>
+          <h6>Dress up in summer vibe</h6>
+          <h5>UPTO 50% OFF</h5>
+        <img src="assets/img/gui-icons/arrow/down.svg"><br>
+        <button>SHOP NOW</button>
+      </div>
+      </div>
+    </a>
+    <a href="products/women">
+      <div class="saving-item" id="zone-2">
+        <div class="saving-item-text">
+          <h1>Printed <br>T-Shirt</h1>
+          <h6>New Designs Every Week</h6>
+          <h5>UPTO 40% OFF</h5>
+        <img src="assets/img/gui-icons/arrow/down.svg"><br>
+        <button>SHOP NOW</button>
+      </div>
+      </div>
+    </a>
+    <a href="products/women">
+    <div class="saving-item" id="zone-3">
+      <div class="saving-item-text">
+        <h1>Cargo <br>Joggers</h1>
+        <h6>Move with style & comfort</h6>
+        <h5>UPTO 50% OFF</h5>
+      <img src="assets/img/gui-icons/arrow/down.svg"><br>
+      <button>SHOP NOW</button>
+    </div>
+    </div>
+    </a>
+    </div>
+    <div class="saving-zone-grid-two">
+      <a href="products/men">
+      <div class="saving-item" id="zone-4">
+        <div class="saving-item-text">
+          <h1>Urban <br>Shirts</h1>
+          <h6>Live In Comfort</h6>
+          <h5>UPTO 60% OFF</h5>
+        <img src="assets/img/gui-icons/arrow/down.svg"><br>
+        <button>SHOP NOW</button>
+      </div>
+      </div>
+      </a>
+      <a href="products/men">
+      <div class="saving-item" id="zone-5">
+        <div class="saving-item-text">
+          <h1>Oversized <br>T-Shirts</h1>
+          <h6>Street Style Icon</h6>
+          <h5>UPTO 60% OFF</h5>
+        <img src="assets/img/gui-icons/arrow/down.svg"><br>
+        <button>SHOP NOW</button>
+        </div>
+      </div>
+      </a>
+    </div>
+  </section>
+  <section class="pic">
+    <div class="pic-inside">
+      <div class="pic-text">
+      <h1>WE MADE YOUR EVERYDAY FASHION BETTER!</h1>
+      <h4>In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7</h4>
+      <button (click)="scrollBottom()">Shop Now</button>
+      </div>
+    </div>
+  </section>
+  <section class="for-men">
+    <div class="for-men-h2 animate__animated animate__fadeIn"><h2 class="home-h2">Categories For Men</h2></div>
+    <div class="men-grid">
+      <div class="men-grid-section home-grid-section" *ngFor="let category of productService.menTypes; let i = index">
+        <div *ngIf="i < 8">
+          <img [src]="category.img" class="men-grid-img">
+          <div class="grid-description"><div><h5>{{category.name}}</h5><p>Explore Now!</p></div>
+          <a href ="/products/men"><img src="assets/img/gui-icons/arrow/right.svg"></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="for-women">
+    <div class="for-women-h2 animate__animated animate__fadeIn"><h2 class="home-h2">Categories For Women</h2></div>
+    <div class="for-women-grid">
+      <div class="women-grid-section home-grid-section" *ngFor="let category of productService.womenTypes; let i = index">
+        <div *ngIf="i < 4">
+          <img [src]="category.img" class="women-grid-img">
+          <div class="grid-description">
+            <div><h5>{{category.name}}</h5><p>Explore Now!</p></div>
+            <a href="#">
+              <img src="assets/img/gui-icons/arrow/right.svg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="top-brands">
+    <div class="brands-header">
+      <h1>Top Brands Deal</h1>
+      <h5>Up To <span style="color: #FBD103;">60%</span> off on brands</h5>
+    </div>
+    <div class="brands-grid">
+      <img src="assets/img/home/top-brands/1.png">
+      <img src="assets/img/home/top-brands/2.png">
+      <img src="assets/img/home/top-brands/3.png">
+      <img src="assets/img/home/top-brands/4.png" id="polo">
+      <img src="assets/img/home/top-brands/5.png">
+    </div>
+  </section>
+  <section class="limelight">
+      <div class="limelight-header animate__animated animate__fadeIn"><h2 class="home-h2">In The Limelight</h2></div>
+      <div class="limelight-grid">
+        <div class="item-product" *ngFor="let lime of productService.limelight">
+          <a [href]="lime.sex === 'f' ? 'products/women/product/' + lime.id : 'products/men/product/' + lime.id ">
+            <div class="product-img" (click)="likeService.likeProduct($event, lime)">
+              <img [src]="lime.url">
+            </div>
+          </a>
+          <div class="product-container">
+            <div class="product-text">
+              <h5>{{lime.title}}</h5>
+              <p>{{lime.brand}}</p>
+            </div>
+            <div class="product-add">
+              <div class="price">{{lime.price | currency}}</div>
+            </div>
+            </div>
+        </div>
+      </div>
+  </section>
+  <section class="feedback">
+    <div class="feedback-header">
+      <h2 class="home-h2">Feedback</h2>
+    </div>
+    <div class="feedback-container">
+      <div class="feedback-card">
+        <div class="card-header">
+          <img src="assets/img/home/feedback/1.png">
+          <div class="card-stars">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+          </div>
+        </div>
+        <div class="card-name">
+          <h3>Floyd Miles</h3>
+        </div>
+        <div class="card-feedback">
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+          Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+        </div>
+        </div>
+      <div class="feedback-card">
+        <div class="card-header">
+          <img src="assets/img/home/feedback/2.png">
+          <div class="card-stars">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_half.svg">
+            <img src="assets/img/home/feedback/star_outline.svg">
+          </div>
+        </div>
+        <div class="card-name">
+          <h3>Ronald Richards</h3>
+        </div>
+        <div class="card-feedback">
+          ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+        </div>
+      </div>
+      <div class="feedback-card">
+        <div class="card-header">
+          <img src="assets/img/home/feedback/3.png">
+          <div class="card-stars">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_full.svg">
+            <img src="assets/img/home/feedback/star_outline.svg">
+          </div>
+        </div>
+        <div class="card-name">
+          <h3>Savannah Nguyen</h3>
+        </div>
+        <div class="card-feedback">
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+          Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

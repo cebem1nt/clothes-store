@@ -1,0 +1,271 @@
+<app-nav></app-nav>
+  <div class="container-site container-area">
+    <div class="main-acord" 
+      *ngIf="isMenuHiden && newOrRecomended" (click)="openMenu()" style="cursor: pointer;"
+      id="hidenmenu" >
+      <h4 id="dml">Filter</h4>
+      <img src="assets/img/gui-icons/Filtter.svg">
+    </div>
+    <div class="bg" *ngIf="!isMenuHiden && newOrRecomended"></div>
+    <div class="main-acord" *ngIf="!isMenuHiden && newOrRecomended" id="activemenu">
+      <div class="acrd-header"><h4>Filter</h4><img src="assets/img/gui-icons/Filtter.svg" 
+        (click)="hideMenu()" style="cursor: pointer;"></div>
+      <div class="acrd-sub">
+
+        <ul *ngIf="currentRoute === '/products/women'">
+          <li *ngFor="let type of productService.womenTypes">
+            <a (click)="AddToWomenParams(type.codeName)"
+            [ngStyle]="{
+              fontWeight: filterWomenParams.hasOwnProperty(type.codeName) ? 700 : 300,
+              color: filterWomenParams.hasOwnProperty(type.codeName) ? 'black' : '#8A8989',
+              cursor: 'pointer'
+            }">{{type.name}}</a>
+            <a (click)="AddToWomenParams(type.codeName)"><img src="assets/img/gui-icons/chevron/right.svg"></a>
+          </li>
+        </ul>
+
+        <ul *ngIf="currentRoute === '/products/men'">
+          <li *ngFor="let type of productService.menTypes">
+            <a (click)="AddToMenParams(type.codeName)" 
+            [ngStyle]="{
+              fontWeight: filterMenParams.hasOwnProperty(type.codeName) ? 700 : 300,
+              color: filterMenParams.hasOwnProperty(type.codeName) ? 'black' : '#8A8989',
+              cursor: 'pointer'
+            }">
+            {{type.name}}</a>
+            <a (click)="AddToMenParams(type.codeName)"><img src="assets/img/gui-icons/chevron/right.svg"></a>
+          </li>
+        </ul>
+
+      </div>
+        <div class="accordion accordion-flush acrd-acrd" id="acrd-nav">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Price
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <form class="price-holder">
+                  <div class="price-input-holder">
+                    $<input 
+                    type="number" min="10" max="1000" value="50" class="acrd-price-start"  #start
+                    (blur)="setPriceFilter(start.value, end.value)">
+                  </div>
+                  <div class="price-input-holder">
+                    $<input type="number" min="10" max="1000" value="100" #end class="acrd-price-end"
+                    (blur)="setPriceFilter(start.value, end.value)">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                Colors
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+
+                <div class="color-grid">
+                  <div class="color-item" *ngFor="let color of productService.colors">
+                    <a (click)="AddToColorParams(color.title)" >
+                      <div class="color-color" 
+                      [ngStyle]="{
+                        backgroundColor: color.hex, 
+                        outlineOffset: '1px',
+                        cursor: 'pointer',
+                        outline: filterColorParams.hasOwnProperty(color.title)? '1px solid #3C4242' : 'none' }"></div>
+                    </a>
+                    <div class="color-name">{{color.title}}</div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                Size
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+              <div class="sizes-grid">
+                <button 
+                (click)="AddToSizeParams(size) " 
+                class="size-btn" 
+                *ngFor="let size of productService.sizes"
+                [ngStyle]="{
+                  backgroundColor: filterSizeParams.hasOwnProperty(size) ? '#3C4242' : 'white',
+                  color: filterSizeParams.hasOwnProperty(size) ? 'white' : '#3C4242'
+                  }">{{ size }}</button>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                Dress Style
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <div class="acrd-sub sub-two">
+                  <ul>
+                    <li *ngFor="let style of productService.dressStyles">
+                      <a 
+                      (click)="currentRoute === '/produts/men' ? AddToMenParams(style) : AddToWomenParams(style)"
+                      [ngStyle]="{
+                        fontWeight: filterWomenParams.hasOwnProperty(style) ? 700 : 300,
+                        color: filterWomenParams.hasOwnProperty(style) ? 'black' : '#8A8989',
+                        cursor: 'pointer'
+                      }"
+                        > 
+                        {{style}} 
+                      </a>
+                      <a (click)="currentRoute === '/produts/men' ? AddToMenParams(style) : AddToWomenParams(style) ">
+                        <img src="assets/img/gui-icons/chevron/right.svg">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+    </div>
+    <div class="main-area">
+        <div class="area-header">
+            <div class="header-header">
+                <h2 *ngIf="currentRoute === '/products/women'">Women's Clothing</h2>
+                <h2 *ngIf="currentRoute === '/products/men'">Men's Clothing</h2>
+            </div>
+            <div class="header-nav">
+                <h2 
+                (click)="newOrRecomended = true"
+                [ngStyle]="{
+                    color: newOrRecomended ? '#8A33FD' : '#3F4646',
+                    cursor: 'pointer',
+                    userSelect: 'none'
+                }">New</h2>
+                <h2  
+                (click)="newOrRecomended = false"
+                [ngStyle]="{
+                    color: !newOrRecomended ? '#8A33FD' : '#3F4646',
+                    cursor: 'pointer',
+                    userSelect: 'none'
+                }"
+                >Recommended</h2>
+            </div>
+          </div>
+          <div class="main-grid" *ngIf="currentRoute === '/products/women' && newOrRecomended">
+            <div class="item-product animate__animated animate__fadeIn" *ngFor="let product of filteredProducts">
+                <a [href]="'/products/women/product/' + product.id ">
+                  <div class="product-img uniq-product-img" (click)="likeService.likeProduct($event, product)">
+                    <img [src]="product.url" alt="">
+                  </div>
+                </a>
+                  <div class="product-container">
+                      <div class="product-text">
+                        <h5>{{ productService.textShortner(product.title) }}</h5>
+                        <p>{{ product.brand }}</p>
+                      </div>
+                    <div class="product-add">
+                      <div class="price">{{ product.price | currency }}</div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="main-grid" *ngIf="currentRoute === '/products/men' && newOrRecomended">
+            <div class="item-product animate__animated animate__fadeIn" *ngFor="let product of filteredProducts">
+                <a [href]="'/products/men/product/' + product.id ">
+                  <div class="product-img uniq-product-img" (click)="likeService.likeProduct($event, product)">
+                    <img [src]="product.url" alt="">
+                  </div>
+                </a>
+                    <div class="product-container">
+                        <div class="product-text">
+                          <h5>{{ productService.textShortner(product.title) }}</h5>
+                          <p>{{ product.brand }}</p>
+                        </div>
+                      <div class="product-add">
+                        <div class="price">{{ product.price | currency }}</div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+          <div class="main-grid" *ngIf="!newOrRecomended">
+            <div class="item-product animate__animated animate__fadeIn" *ngFor="let product of userService.recomendedProducts">
+              <a [href]="'/products/men/product/' + product.id">
+                <div class="product-img uniq-product-img" (click)="likeService.likeProduct($event, product)">
+                  <img [src]="product.url">
+                </div>
+              </a>
+                <div class="product-container">
+                    <div class="product-text">
+                      <h5>{{ productService.textShortner(product.title) }}</h5>
+                      <p>{{ product.brand }}</p>
+                    </div>
+                  <div class="product-add">
+                    <div class="price">${{ product.price | currency }}</div>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="container-site">
+  <div class="clothing-for">
+    <div class="clothing-for-header">
+      <h2 class="home-h2 list-h2" *ngIf="currentRoute ==='/products/women'">Clothing for Women Online in India</h2>
+      <h2 class="home-h2 list-h2" *ngIf="currentRoute ==='/products/men'">Clothing for Men Online in India</h2>
+    </div>
+    <div class="clothing-sub">
+      <h3 *ngIf="currentRoute === '/products/women'">Reexplore Women's Clothing Collection Online at Euphoria</h3>
+      <h3 *ngIf="currentRoute === '/products/men'">Reexplore Men's Clothing Collection Online at Euphoria</h3>
+    </div>
+    <br>
+    <div class="clothing-par">
+      <p *ngIf="currentRoute === '/products/women'">
+        Women's Clothing – Are you searching for the best website to buy Clothing for Women online in India? Well, your search for the coolest and most stylish womens clothing ends here. From trendy Casual Womens Wear Online shopping to premium quality cotton women's apparel, Euphoria has closet of Women Collection covered with the latest and best designs of Women's Clothing Online.
+      </p>
+      <p *ngIf="currentRoute === '/products/men'">
+        men's Clothing – Are you searching for the best website to buy Clothing for men online in India? Well, your search for the coolest and most stylish mens clothing ends here. From trendy Casual mens Wear Online shopping to premium quality cotton men's apparel, Euphoria has closet of men Collection covered with the latest and best designs of men's Clothing Online.
+      </p>
+    </div>
+    <br>
+    <div class="clothing-par">
+     <p *ngIf="currentRoute === '/products/women'">Our collection of clothes for women will make you the trendsetter with an iconic resemblance of choice in Womens Wear. </p>
+     <p *ngIf="currentRoute === '/products/men'">Our collection of clothes for men will make you the trendsetter with an iconic resemblance of choice in mens Wear. </p>
+    </div>
+    <br>
+    <div class="clothing-sub">
+      <h3 *ngIf="currentRoute === '/products/men'">One-Stop Destination to Shop Every Clothing for Men: Euphoria</h3>
+      <h3 *ngIf="currentRoute === '/products/women'">One-Stop Destination to Shop Every Clothing for Women: Euphoria</h3>
+    </div>
+    <br>
+    <div class="clothing-par">
+      <p *ngIf="currentRoute === '/products/women'">
+        Today, Clothing for Women is gaining more popularity above all. This is because gone are the days when women were used to carrying uncomfortable fashion. Today, a lady looks prettier when she is in Casual Womens Wear which is a comfortable outfit. Concerning this, <span style="font-weight: 700;">Euphoria</span> has a big fat range of Stylish Women's Clothing that would make her the winner wherever she goes. 
+      </p>
+      <p *ngIf="currentRoute === '/products/men'">
+        Today, Clothing for men is gaining more popularity above all. This is because gone are the days when men were used to carrying uncomfortable fashion. Today, a lady looks prettier when she is in Casual mens Wear which is a comfortable outfit. Concerning this, <span style="font-weight: 700;">Euphoria</span> has a big fat range of Stylish men's Clothing that would make her the winner wherever she goes.
+      </p>
+    </div>
+    <br>
+    <div class="clothing-par">
+      <p *ngIf="currentRoute === '/products/women'">Our collection of clothes for women will make you the trendsetter with an iconic resemblance of choice in Womens Wear. It is quite evident to say that there are very few Womens Clothing online stores where you can buy Western Wear for Women comprising the premium material and elegant design that you are always seeking for. Basically, </p>
+      <p *ngIf="currentRoute === '/products/men'">Our collection of clothes for men will make you the trendsetter with an iconic resemblance of choice in mens Wear. It is quite evident to say that there are very few mens Clothing online stores where you can buy Western Wear for men comprising the premium material and elegant design that you are always seeking for. Basically, </p>
+    </div>
+    <div class="clothing-sub">
+      <a href="#"><h3>See More</h3></a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

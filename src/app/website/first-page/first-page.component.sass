@@ -1,0 +1,201 @@
+@mixin btnColor($bg)
+  cursor: pointer
+  transition: 0.2s linear
+  @if $bg == #8A33FD
+    background-color: white
+    color: #8A33FD
+  @else if $bg == white
+    background-color: #8A33FD
+    color: white
+
+a
+  cursor: pointer
+
+.header
+  display: flex
+  justify-content: space-between
+  padding: 3vh 1rem
+  font-family: 'Poppins', sans-serif
+  border-bottom: 1px groove
+  user-select: none
+
+input
+  padding: 0 9px
+
+input::placeholder
+  color: gray
+
+.header-logo
+  height: 100%
+  margin-right: 1rem
+  display: flex
+  align-items: center
+  img
+    height: 100%
+    width: 100%
+
+.header-all
+  display: flex
+  width: 100%
+  justify-content: space-between
+
+.header-buttons
+  display: flex
+  align-items: center
+  gap: 1rem
+
+.buttons-login, .buttons-signup
+  font-size: 100%
+  border-radius: 8px
+  border: 1px solid #3C4242
+  padding: 0.6vw 2.5vw
+  white-space: nowrap
+
+.signin
+  display: flex 
+  user-select: none
+
+.signin-pic
+  img
+    width: 100%
+
+.signin-text
+  padding: 1.6rem 10%
+  width: 50%
+  
+.area-header
+  margin-bottom: 5vh
+
+#google, #twiter
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #8A33FD
+  background-color: white
+  border-radius: 8px
+  border: 1px solid #3C4242
+  padding: 3vh 5vh
+  text-align: center
+  img
+    height: 20px
+    width: 20px
+    margin-right: 6px
+  h5
+    font-size: 100%
+
+#google:hover, #twiter:hover
+  @include btnColor(white)
+
+.continue-with
+  display: flex
+  flex-direction: column
+  gap: 3vh
+  white-space: nowrap
+
+.divider
+  color: #666
+  display: flex
+  justify-content: center
+  margin-top: 5vh
+  margin-bottom: 5vh
+  position: relative
+  overflow: hidden
+
+  #or
+    position: relative
+    font-weight: 100
+
+  &:before, &:after
+    content: ""
+    position: absolute
+    top: 50%
+    width: 45%
+    height: 1px
+    background: rgba(102, 102, 102, 0.25)
+    transform: translateY(-50%)
+
+  &:before
+    left: 0
+
+  &:after
+    right: 0
+
+.email-holder, .password-holder
+  display: flex
+  flex-direction: column
+  margin-bottom: 5vh
+  img
+    width: 18px
+    height: 18px
+    margin-right: 3px
+  input
+    height: 6.5vh
+    border-radius: 8px
+    border: 1px solid #3C4242
+    outline-color: #8A33FD
+
+.password-label
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.button-signin-holder
+  white-space: nowrap
+  display: flex
+  flex-direction: column
+
+.password, .email
+  &:focus
+    color: #8A33FD
+    border: 1px solid #8A33FD
+    background: rgba(102, 32, 193, 0.03)
+
+
+.first-check-box,.second-check-box
+    display: flex
+    gap: 1vh
+
+
+.first-page-btn
+  text-align: center
+  border-radius: 8px
+  background-color: #8A33FD
+  border: 1px solid #3C4242
+  color: #fff
+  padding: 0.7vw 5vw
+
+.hide-h6
+  cursor: pointer
+
+.first-page-btn:hover
+  @include btnColor(#8A33FD)
+
+.signin-button
+  margin-bottom: 3vh
+
+.check-boxes
+  width: 100%
+  h6
+    white-space: pre-wrap
+    font-size: 85%
+
+.grey-underline
+  text-decoration: underline #3C4242
+
+@media only screen and (max-width: 970px)
+  .signin-pic
+    display: none
+
+  .signin-text
+    width: 100%
+
+@media only screen and (max-width: 520px)
+  .header-buttons
+    gap: 0.5rem
+
+  .buttons-login, .buttons-signup
+    padding: 1.5vw 6.5vw
+
+@media only screen and (max-width: 355px)
+  .signin
+    justify-content: flex-start

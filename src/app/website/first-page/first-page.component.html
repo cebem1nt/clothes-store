@@ -1,0 +1,28 @@
+<header class="header">
+    <div class="header-all">
+    <div class="header-logo"><img src="assets/img/Logo.svg"></div>
+    <div class="header-buttons">
+      <a href="/"><button class="buttons-login" [ngStyle]="{
+        backgroundColor: currentRoute == '/' ? '#8A33FD' : 'white' ,
+        color: currentRoute == '/' ? 'white' : '#8A33FD'
+       }">Login</button></a>
+        <a href="/sign_up"><button class="buttons-signup"  [ngStyle]="{
+            backgroundColor: currentRoute == '/sign_up' ? '#8A33FD' : 'white' ,
+            color: currentRoute == '/sign_up' ? 'white' : '#8A33FD'
+           }">Sign Up</button></a>
+    </div>
+    </div>
+</header>
+<section class="signin">
+    <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == '/'"><img src="assets/img/first-page/3women.png"></div>
+    <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == '/sign_up'"><img src="assets/img/first-page/4guys.png"></div>
+    <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == '/reset_password'"><img src="assets/img/first-page/2women.png"></div>
+    <!-- <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == ''"><img src="assets/img/first-page/a2women.png"></div>
+    <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == ''"><img src="assets/img/first-page/1woman.png"></div>
+    <div class="signin-pic animate__animated animate__fadeInDown animate__fast" *ngIf="currentRoute == ''"><img src="assets/img/first-page/4women.png"></div> -->
+   
+    <div class="signin-text">
+        <router-outlet></router-outlet>
+    </div>
+
+</section>

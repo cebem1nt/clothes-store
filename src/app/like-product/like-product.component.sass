@@ -1,0 +1,98 @@
+.changed-bg
+    position: fixed
+    top: 0%
+    bottom: 0%
+    z-index: 1000
+    width: 100%
+    height: 120vh
+    background-color: #a39f9f8c
+    
+.like-product
+    background: #fff
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 5vh auto
+    width: 90vh
+    padding: 5vh
+    border-radius: 0.5rem
+    user-select: none
+
+.colors
+    display: flex
+    justify-content: space-around
+    width: 70%
+    margin-bottom: 4vh
+
+.sizes
+    display: flex
+    justify-content: center
+    gap: 5vh
+    margin-bottom: 2.5vh
+
+.size
+    background: #F6F6F6
+    padding: 1vh 2vh
+    border-radius: 0.5rem
+
+.color, .sizes
+    h3
+        font-size: 100%
+        font-weight: 600
+        text-align: center
+        margin-bottom: 0
+
+.color-inside
+    width: 8vh
+    height: 8vh
+    border-radius: 25%
+    margin-bottom: 2vh
+
+.img
+    margin-bottom: 5vh  
+    img
+        width: 100%
+        height: 40vh
+
+.quantity
+    display: flex
+    align-items: center
+    gap: 3vh
+    margin-bottom: 4vh
+
+.buttons
+    display: flex
+    gap: 4vh
+    user-select: none
+    .like
+        width: 30vh
+        background: #8A33FD
+        color: #fff
+        padding: 1vh 6vh
+        border-radius: 0.5rem   
+
+    .cancel 
+        width: 30vh
+        background: #F6F6F6
+        color: #807D7E
+        padding: 1vh 6vh
+        border-radius: 0.5rem   
+
+.selected-size
+    background: #807D7E
+    color: #F6F6F6
+
+.selected-color 
+    outline: 2px solid #807D7E
+    outline-offset: 0.1rem
+
+@media only screen and (max-width: 630px)
+    .like-product
+        width: 100%
+    .buttons
+        flex-direction: column
+
+    .img
+        img
+            height: 30vh
+    
